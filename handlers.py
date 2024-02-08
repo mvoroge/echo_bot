@@ -17,5 +17,5 @@ async def command_start_handler(message: Message) -> None:
 @router.message()
 async def echo_message(message: Message) -> None:
     await message.answer(
-        text=f'{hbold(message.text)}',
+        text=f'{hbold(message.text)}' + '\n\nУмница, теперь иди домой!',
     )
