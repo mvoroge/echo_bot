@@ -1,7 +1,7 @@
 from aiogram import Router
 from aiogram.filters import CommandStart
 from aiogram.types import Message
-
+from aiogram.utils.markdown import hbold
 
 router = Router()
 
@@ -17,6 +17,5 @@ async def command_start_handler(message: Message) -> None:
 @router.message()
 async def echo_message(message: Message) -> None:
     await message.answer(
-        text=f'||{message.text}||',
-        parse_mode='markdownv2'
+        text=f'{hbold(message.text)}',
     )
